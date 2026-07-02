@@ -63,3 +63,7 @@ for feature in features:
     st.markdown(f"{feature}")
 
 st.success("Use the sidebar to access all tools.")
+
+st.divider()
+
+st.info("Use the **left sidebar** to navigate between all the Email Suite tools.")
