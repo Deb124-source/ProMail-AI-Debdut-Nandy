@@ -165,5 +165,6 @@ Return ONLY the email.
         save_history(
             subject,
             email_type,
-            tone
+            tone,
+            email
         )
