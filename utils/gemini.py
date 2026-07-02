@@ -10,7 +10,6 @@ client = genai.Client(
 
 MODEL = "gemini-2.5-flash"
 
-
 def ask_gemini(prompt):
 
     response = client.models.generate_content(
@@ -18,4 +17,4 @@ def ask_gemini(prompt):
         contents=prompt
     )
 
-    return response.text
+    return response.text.strip()
