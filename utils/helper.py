@@ -50,21 +50,25 @@ def copy_message():
 
 
 
-def save_history(subject, email_type, tone):
+def save_history(subject, email_type, tone, content=""):
 
     if "history" not in st.session_state:
         st.session_state.history = []
 
-    st.session_state.history.append(
-        {
-            "Date": datetime.now().strftime("%d-%m-%Y %H:%M"),
-            "Subject": subject,
-            "Type": email_type,
-            "Tone": tone
-        }
-    )
+    st.session_state.history.append({
 
+        "Date": datetime.now().strftime("%d-%m-%Y %H:%M"),
 
+        "Subject": subject,
+
+        "Type": email_type,
+
+        "Tone": tone,
+
+        "Content": content
+
+    })
+    
 
 def show_history():
 
