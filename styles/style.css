@@ -1,21 +1,270 @@
+/* =========================
+   Google Font
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   Global
+========================= */
+
+html, body, [class*="css"]{
+    font-family: 'Poppins', sans-serif;
+}
+
 .block-container{
     padding-top:2rem;
+    padding-bottom:2rem;
+    max-width:1200px;
 }
+
+/* =========================
+   Main Background
+========================= */
+
+.stApp{
+    background:linear-gradient(135deg,#eef5ff,#ffffff);
+}
+
+/* =========================
+   Sidebar
+========================= */
+
+section[data-testid="stSidebar"]{
+    background:#0f172a;
+}
+
+section[data-testid="stSidebar"] *{
+    color:white;
+}
+
+section[data-testid="stSidebar"] .stSelectbox label{
+    color:white;
+}
+
+/* =========================
+   Headings
+========================= */
 
 h1{
-    color:#1E88E5;
+    color:#2563eb;
+    font-weight:700;
 }
+
+h2,h3{
+    color:#1e3a8a;
+}
+
+/* =========================
+   Buttons
+========================= */
 
 .stButton>button{
+
     width:100%;
-    height:50px;
+
+    border:none;
+
     border-radius:12px;
-    font-size:18px;
+
+    padding:0.75rem;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:linear-gradient(90deg,#2563eb,#4f46e5);
+
+    transition:0.3s;
 }
 
-.feature-card{
-    background:#f5f5f5;
-    padding:20px;
+.stButton>button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+
+}
+
+/* =========================
+   Text Input
+========================= */
+
+.stTextInput>div>div>input{
+
     border-radius:12px;
-    margin-bottom:15px;
+
+    border:2px solid #dbeafe;
+
+}
+
+/* =========================
+   Text Area
+========================= */
+
+.stTextArea textarea{
+
+    border-radius:15px;
+
+    border:2px solid #dbeafe;
+
+}
+
+/* =========================
+   Selectbox
+========================= */
+
+.stSelectbox>div>div{
+
+    border-radius:12px;
+
+}
+
+/* =========================
+   Metrics
+========================= */
+
+div[data-testid="metric-container"]{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:18px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    border-left:6px solid #2563eb;
+
+}
+
+/* =========================
+   Info Box
+========================= */
+
+div[data-testid="stAlert"]{
+
+    border-radius:15px;
+
+}
+
+/* =========================
+   Download Button
+========================= */
+
+.stDownloadButton>button{
+
+    width:100%;
+
+    border-radius:12px;
+
+    background:#10b981;
+
+    color:white;
+
+    font-weight:600;
+
+}
+
+.stDownloadButton>button:hover{
+
+    background:#059669;
+
+}
+
+/* =========================
+   Tabs
+========================= */
+
+button[data-baseweb="tab"]{
+
+    border-radius:10px;
+
+    font-weight:600;
+
+}
+
+/* =========================
+   Dataframe
+========================= */
+
+div[data-testid="stDataFrame"]{
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+/* =========================
+   Divider
+========================= */
+
+hr{
+
+    border:0;
+
+    height:2px;
+
+    background:linear-gradient(to right,#2563eb,#4f46e5);
+
+}
+
+/* =========================
+   Scrollbar
+========================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:10px;
+
+}
+
+/* =========================
+   Expander
+========================= */
+
+.streamlit-expanderHeader{
+
+    font-weight:600;
+
+}
+
+/* =========================
+   Success
+========================= */
+
+.stSuccess{
+
+    border-radius:12px;
+
+}
+
+/* =========================
+   Warning
+========================= */
+
+.stWarning{
+
+    border-radius:12px;
+
+}
+
+/* =========================
+   Error
+========================= */
+
+.stError{
+
+    border-radius:12px;
+
 }
