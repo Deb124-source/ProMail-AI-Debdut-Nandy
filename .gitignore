@@ -1,0 +1,22 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+venv/
+.env/
+
+# Streamlit
+.streamlit/
+
+# Database
+*.db
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
