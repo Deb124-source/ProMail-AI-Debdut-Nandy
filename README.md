@@ -52,11 +52,8 @@ ProMail-AI/
 ```
 ---
 
-## 📸 Preview
-
+## 📸 Preview of App
 <img width="100%" alt="ProMail AI" src="Screenshot 2026-07-02 163809.png">
-
-*(Replace with screenshots of your application if available.)*
 
 ---
 
