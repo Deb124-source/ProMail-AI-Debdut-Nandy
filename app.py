@@ -67,3 +67,9 @@ st.success("Use the sidebar to access all tools.")
 st.divider()
 
 st.info("Use the **left sidebar** to navigate between all the Email Suite tools.")
+
+st.divider()
+
+st.caption(
+"© 2026 ProMailAI | Developed by Debdut Nandy"
+)
