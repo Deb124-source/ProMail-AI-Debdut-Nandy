@@ -27,9 +27,9 @@ def display_text_statistics(text):
 
     c1, c2, c3 = st.columns(3)
 
-    c1.metric("📝 Words", word_count(text))
-    c2.metric("🔤 Characters", character_count(text))
-    c3.metric("📄 Lines", line_count(text))
+    c1.metric("Words", word_count(text))
+    c2.metric("Characters", character_count(text))
+    c3.metric("Lines", line_count(text))
 
 
 # ===========================
@@ -90,7 +90,7 @@ def error_message(message):
 
 def loading():
 
-    return st.spinner("🤖 Gemini is generating your content...")
+    return st.spinner("Processing the Request...")
 
 
 # ===========================
