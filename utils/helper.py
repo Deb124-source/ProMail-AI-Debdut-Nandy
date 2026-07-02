@@ -1,39 +1,64 @@
 import streamlit as st
-from datetime import datetime
 import pandas as pd
+from datetime import datetime
 
 
+# ===========================
+# TEXT STATISTICS
+# ===========================
 
 def word_count(text):
-    """Return the number of words."""
     return len(text.split())
 
 
 def character_count(text):
-    """Return the number of characters."""
     return len(text)
 
 
 def line_count(text):
-    """Return the number of lines."""
     return len(text.splitlines())
 
 
+# ===========================
+# DISPLAY TEXT STATISTICS
+# ===========================
 
 def display_text_statistics(text):
 
     c1, c2, c3 = st.columns(3)
 
-    c1.metric("Words", word_count(text))
-    c2.metric("Characters", character_count(text))
-    c3.metric("Lines", line_count(text))
+    c1.metric("📝 Words", word_count(text))
+    c2.metric("🔤 Characters", character_count(text))
+    c3.metric("📄 Lines", line_count(text))
 
 
+# ===========================
+# BEFORE VS AFTER
+# ===========================
+
+def compare_statistics(original, improved):
+
+    st.subheader("📊 Before vs After")
+
+    left, right = st.columns(2)
+
+    with left:
+        st.metric("Original Words", word_count(original))
+        st.metric("Original Characters", character_count(original))
+
+    with right:
+        st.metric("Improved Words", word_count(improved))
+        st.metric("Improved Characters", character_count(improved))
+
+
+# ===========================
+# DOWNLOAD BUTTON
+# ===========================
 
 def download_txt(text, filename="generated_email.txt"):
 
     st.download_button(
-        label="⬇️ Download as TXT",
+        label="⬇ Download as TXT",
         data=text,
         file_name=filename,
         mime="text/plain",
@@ -41,16 +66,50 @@ def download_txt(text, filename="generated_email.txt"):
     )
 
 
+# ===========================
+# SUCCESS MESSAGE
+# ===========================
 
-def copy_message():
+def success_message():
 
-    st.info(
-        "Select the generated email and press **Ctrl + C** (Windows) or **Cmd + C** (Mac) to copy."
-    )
+    st.success("✅ Task completed successfully!")
 
 
+# ===========================
+# ERROR MESSAGE
+# ===========================
 
-def save_history(subject, email_type, tone, content=""):
+def error_message(message):
+
+    st.error(message)
+
+
+# ===========================
+# LOADING SPINNER
+# ===========================
+
+def loading():
+
+    return st.spinner("🤖 Gemini is generating your content...")
+
+
+# ===========================
+# DIVIDER
+# ===========================
+
+def divider():
+
+    st.markdown("---")
+
+
+# ===========================
+# EMAIL HISTORY
+# ===========================
+
+def save_history(subject,
+                 email_type,
+                 tone,
+                 content=""):
 
     if "history" not in st.session_state:
         st.session_state.history = []
@@ -68,13 +127,17 @@ def save_history(subject, email_type, tone, content=""):
         "Content": content
 
     })
-    
+
+
+# ===========================
+# SHOW HISTORY
+# ===========================
 
 def show_history():
 
     if "history" not in st.session_state:
 
-        st.warning("No emails generated yet.")
+        st.info("No history available.")
 
         return
 
@@ -87,34 +150,44 @@ def show_history():
     )
 
 
+# ===========================
+# CLEAR HISTORY
+# ===========================
 
 def clear_history():
 
-    if st.button("Clear History"):
+    if "history" in st.session_state:
 
         st.session_state.history = []
 
-        st.success("History Cleared!")
+        st.success("History cleared successfully!")
 
 
+# ===========================
+# EXPORT HISTORY
+# ===========================
 
-def success_message():
+def download_history():
 
-    st.success("Email generated successfully!")
+    if "history" not in st.session_state:
 
+        st.warning("No history available.")
 
+        return
 
-def error_message(msg):
+    df = pd.DataFrame(st.session_state.history)
 
-    st.error(msg)
+    csv = df.to_csv(index=False).encode("utf-8")
 
+    st.download_button(
 
+        label="⬇ Download History",
 
-def loading():
+        data=csv,
 
-    return st.spinner("Generating your email...")
+        file_name="email_history.csv",
 
+        mime="text/csv",
 
-def divider():
-
-    st.markdown("---")
+        use_container_width=True
+    )
