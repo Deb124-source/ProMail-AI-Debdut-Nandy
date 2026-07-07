@@ -6,7 +6,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("About MailGenius AI")
+st.title("About ProMail AI")
 
 st.markdown("""
 ## ProMail AI
