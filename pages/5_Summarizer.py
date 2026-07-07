@@ -13,11 +13,11 @@ from utils.helper import (
 
 st.set_page_config(
     page_title="Email Summarizer",
-    page_icon="📄",
+    page_icon="",
     layout="wide"
 )
 
-st.title("📄 AI Email Summarizer")
+st.title("AI Email Summarizer")
 
 st.write(
     "Summarize long emails into easy-to-read insights."
@@ -43,7 +43,7 @@ summary_style = st.selectbox(
 )
 
 generate = st.button(
-    "📄 Generate Summary",
+    "Generate Summary",
     use_container_width=True
 )
 
