@@ -13,11 +13,11 @@ from utils.helper import (
 
 st.set_page_config(
     page_title="Email Translator",
-    page_icon="🌍",
+    page_icon="",
     layout="wide"
 )
 
-st.title("🌍 AI Email Translator")
+st.title("AI Email Translator")
 
 st.write(
     "Translate emails while preserving formatting, tone, and meaning."
@@ -80,7 +80,7 @@ email = st.text_area(
 )
 
 translate = st.button(
-    "🌍 Translate Email",
+    "Translate Email",
     use_container_width=True
 )
 
