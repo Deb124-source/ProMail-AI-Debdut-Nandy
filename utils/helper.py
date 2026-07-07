@@ -38,7 +38,7 @@ def display_text_statistics(text):
 
 def compare_statistics(original, improved):
 
-    st.subheader("📊 Before vs After")
+    st.subheader("Before vs After")
 
     left, right = st.columns(2)
 
