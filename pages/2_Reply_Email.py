@@ -13,11 +13,11 @@ from utils.helper import (
 
 st.set_page_config(
     page_title="Reply to Email",
-    page_icon="📨",
+    page_icon="",
     layout="wide"
 )
 
-st.title("📨 AI Email Reply")
+st.title("AI Email Reply")
 
 st.write(
     "Generate professional replies to emails using Gemini AI."
@@ -70,7 +70,7 @@ original_email = st.text_area(
 )
 
 generate = st.button(
-    "🚀 Generate Reply",
+    "Generate Reply",
     use_container_width=True
 )
 
