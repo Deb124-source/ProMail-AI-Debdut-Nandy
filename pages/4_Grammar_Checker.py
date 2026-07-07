@@ -14,11 +14,11 @@ from utils.helper import (
 
 st.set_page_config(
     page_title="Grammar Checker",
-    page_icon="📝",
+    page_icon="",
     layout="wide"
 )
 
-st.title("📝 AI Grammar Checker")
+st.title("AI Grammar Checker")
 
 st.write(
     "Correct grammar, punctuation and improve writing quality."
@@ -33,7 +33,7 @@ email = st.text_area(
 )
 
 generate = st.button(
-    "📝 Check Grammar",
+    "Check Grammar",
     use_container_width=True
 )
 
